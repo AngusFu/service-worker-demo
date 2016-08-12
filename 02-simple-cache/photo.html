@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Worker Demo 01</title>
+    <style>
+        body {
+            font-family: 'helvetica neue',tahoma,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;
+        }
+        #slot {
+            max-width: 960px;
+            margin: 20px auto;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/template" id="photoTmpl">
+        <ul>
+        {{~it: item : index}}
+            <li>
+                <h3>{{= index + ':' + item.title}}</h3>
+                <p>{{= item.desc }}</p>
+                <img src="{{= item.url }}" alt="">
+            </li>
+        {{~}}
+        </ul>
+    </script>
+    <div id="slot"></div>
+    <script src="./lib/doT.min.js"></script>
+    <script src="./photoData.js"></script>
+    <script>
+        var render = doT.compile(document.getElementById('photoTmpl').innerHTML);
+        document.getElementById('slot').innerHTML = render(photoData);
+    </script>
+</body>
+
+</html>

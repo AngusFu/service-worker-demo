@@ -16,5 +16,8 @@
     "url": "https://github.com/AngusFu/service-worker-demo/issues"
   },
   "homepage": "https://github.com/AngusFu/service-worker-demo#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "yargs": "^4.8.1"
+  }
 }

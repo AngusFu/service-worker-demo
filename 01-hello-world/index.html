@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Worker Demo 01</title>
+</head>
+<body>
+    <script>
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register('./ServiceWorker.js', {
+                scope: './'
+            });
+        }
+    </script>
+</body>
+</html>
